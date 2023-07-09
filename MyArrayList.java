@@ -17,4 +17,13 @@ public class MyArrayList<T>  implements MyList<T> {
         }
         return false;
     }
+    public void add(T item) {
+        if (size == elements.length) {
+            Object[] newElements = new Object[2 * elements.length];
+            System.arraycopy(elements, 0, newElements, 0, size);
+            elements = newElements;
+        }
+        elements[size] = item;
+        size++;
+    }
 }
