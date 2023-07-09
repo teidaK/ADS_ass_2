@@ -70,4 +70,12 @@ public class MyArrayList<T>  implements MyList<T> {
         }
         return (T) elements[index];
     }
+    public int lastIndexOf(Object o) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (elements[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
