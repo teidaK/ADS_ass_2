@@ -78,4 +78,12 @@ public class MyArrayList<T>  implements MyList<T> {
         }
         return -1;
     }
+    public int indexOf(Object o) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(o)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
