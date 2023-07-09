@@ -60,4 +60,8 @@ public class MyArrayList<T>  implements MyList<T> {
         size--;
         return removedElement;
     }
+    public void clear() {
+        elements = new Object[10];
+        size = 0;
+    }
 }
