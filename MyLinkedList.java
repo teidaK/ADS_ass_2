@@ -85,5 +85,22 @@ public class MyLinkedList<T> implements MyList<T> {
         removeNode(nodeToRemove);
         return nodeToRemove.element;
     }
-
+    private Node getNode(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node current;
+        if (index < size / 2) {
+            current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+        } else {
+            current = tail;
+            for (int i = size - 1; i > index; i--) {
+                current = current.previous;
+            }
+        }
+        return current;
+    }
 }
