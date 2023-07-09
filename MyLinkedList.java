@@ -51,6 +51,16 @@ public class MyLinkedList<T> implements MyList<T> {
         }
         size++;
     }
-
+    public boolean remove(T item) {
+        Node current = head;
+        while (current != null) {
+            if (current.element.equals(item)) {
+                removeNode(current);
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 
 }
