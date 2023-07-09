@@ -86,4 +86,19 @@ public class MyArrayList<T>  implements MyList<T> {
         }
         return -1;
     }
+    public void sort() {
+        for (int i = 0; i < size - 1; i++) {
+            for (int j = 0; j < size - i - 1; j++) {
+                if (((Comparable<T>) elements[j]).compareTo((T) elements[j + 1]) > 0) {
+                    swap(j, j + 1);
+                }
+            }
+        }
+    }
+
+    private void swap(int index1, int index2) {
+        Object temp = elements[index1];
+        elements[index1] = elements[index2];
+        elements[index2] = temp;
+    }
 }
