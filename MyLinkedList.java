@@ -77,5 +77,13 @@ public class MyLinkedList<T> implements MyList<T> {
         node.previous = null;
         size--;
     }
+    public T remove(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node nodeToRemove = getNode(index);
+        removeNode(nodeToRemove);
+        return nodeToRemove.element;
+    }
 
 }
