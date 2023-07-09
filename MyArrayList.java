@@ -42,4 +42,13 @@ public class MyArrayList<T>  implements MyList<T> {
         }
         size++;
     }
+    public boolean remove(T item) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(item)) {
+                remove(i);
+                return true;
+            }
+        }
+        return false;
+    }
 }
