@@ -64,4 +64,10 @@ public class MyArrayList<T>  implements MyList<T> {
         elements = new Object[10];
         size = 0;
     }
+    public T get(int index) {
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException();
+        }
+        return (T) elements[index];
+    }
 }
