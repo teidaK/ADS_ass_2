@@ -8,5 +8,8 @@ public class MyLinkedList<T> implements MyList<T> {
             this.element = element;
         }
     }
+    private Node head;
+    private Node tail;
+    private int size;
 
 }
