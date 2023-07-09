@@ -16,4 +16,7 @@ public class MyLinkedList<T> implements MyList<T> {
         tail = null;
         size = 0;
     }
+    public int size() {
+        return size;
+    }
 }
