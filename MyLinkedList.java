@@ -22,4 +22,7 @@ public class MyLinkedList<T> implements MyList<T> {
     public boolean contains(Object o) {
         return indexOf(o) != -1;
     }
+    public void add(T item) {
+        add(item, size);
+    }
 }
