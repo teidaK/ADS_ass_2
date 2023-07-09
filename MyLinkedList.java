@@ -25,4 +25,32 @@ public class MyLinkedList<T> implements MyList<T> {
     public void add(T item) {
         add(item, size);
     }
+    public void add(T item, int index) {
+        if (index < 0 || index > size) {
+            throw new IndexOutOfBoundsException();
+        }
+        Node newNode = new Node(item);
+        if (index == 0) {
+            newNode.next = head;
+            if (head != null) {
+                head.previous = newNode;
+            } else {
+                tail = newNode;
+            }
+            head = newNode;
+        } else if (index == size) {
+            tail.next = newNode;
+            newNode.previous = tail;
+            tail = newNode;
+        } else {
+            Node current = getNode(index);
+            newNode.next = current;
+            newNode.previous = current.previous;
+            current.previous.next = newNode;
+            current.previous = newNode;
+        }
+        size++;
+    }
+
+
 }
