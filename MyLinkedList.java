@@ -1,4 +1,4 @@
-public class MyLinkedList<T> implements MyList<T> {
+public class MyLinkedList<T extends Comparable<T>> implements MyList<T> {
     private class Node {
         T element;
         Node next;
@@ -84,6 +84,11 @@ public class MyLinkedList<T> implements MyList<T> {
         Node nodeToRemove = getNode(index);
         removeNode(nodeToRemove);
         return nodeToRemove.element;
+    }
+    public void clear() {
+        head = null;
+        tail = null;
+        size = 0;
     }
     public T get(int index) {
         if (index < 0 || index >= size) {

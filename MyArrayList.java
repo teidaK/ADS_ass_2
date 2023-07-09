@@ -101,4 +101,17 @@ public class MyArrayList<T>  implements MyList<T> {
         elements[index1] = elements[index2];
         elements[index2] = temp;
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        for (int i = 0; i < size; i++) {
+            sb.append(elements[i]);
+            if (i < size - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }

@@ -31,4 +31,4 @@ public class Main {
         System.out.println("Отсортированный MyLinkedList: " + myLinkedList);
     }
     }
-}
+
